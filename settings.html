@@ -9,32 +9,50 @@
 
 <body>
 
-    <!-- ========================================================= -->
-    <!-- SITE TITLE BANNER                                         -->
-    <!-- ========================================================= -->
+    <!-- SITE TITLE BANNER -->
     <div class="site-title-wrapper">
         <h1 class="site-title">What's Their Name?</h1>
-        <p class="site-tagline"></p> <!-- You add text later in GitHub -->
+        <p class="site-tagline"></p> <!-- Placeholder for your tagline -->
     </div>
 
-    <!-- ========================================================= -->
-    <!-- NAVBAR                                                    -->
-    <!-- ========================================================= -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <a class="nav-btn" href="index.html">Home</a>
         <a class="nav-btn" href="settings.html">Settings</a>
     </nav>
 
-    <!-- ========================================================= -->
-    <!-- SETTINGS PAGE MAIN WRAPPER                                -->
-    <!-- ========================================================= -->
+    <!-- SETTINGS PAGE WRAPPER -->
     <div class="settings-wrapper">
 
-        <h2 class="settings-heading">Settings</h2>
+        <!-- BLANK SPACE FOR FUTURE CONTENT (NON-EDITABLE) -->
+        <div class="settings-content-placeholder">
+            <!-- You will add text here via GitHub later -->
+        </div>
 
-        <!-- ===================================================== -->
-        <!-- NON-EDITABLE BLANK AREA (You add text in GitHub only) -->
-        <!-- ===================================================== -->
+        <!-- OPTIONAL IMAGE PLACEHOLDER -->
+        <div class="settings-image-placeholder">
+            <img src="" alt="">
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="copyright-wrapper">
+        <p class="copyright-text">© taskforcetech</p>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+                console.warn('SW registration failed:', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
+
+<!-- ===================================================== -->
         <div class="settings-content-placeholder">
             <!-- Add any text here via GitHub; users only see blank -->
         </div>
