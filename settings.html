@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>What's their name? — Settings</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Fonts: Merriweather + Nunito -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&family=Nunito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#b67d43" />
@@ -13,18 +14,20 @@
 <body>
   <!--
     WRAPPER: settings-root
-    Purpose: Entire settings page. This page is completely separate from homepage/pages as requested.
+    Purpose: Entire settings page; separate from homepage and other pages.
   -->
   <div id="settings-root">
-    <!-- Banner -->
     <header class="app-banner" role="banner">
       <h1 class="app-title">What's their name?</h1>
-      <p class="app-tagline"><!-- tagline: add text here --></p>
+      <p class="app-tagline"><!-- tagline placeholder --></p>
       <hr class="banner-divider" />
     </header>
 
-    <!-- Navbar: Settings page also has Home + Settings buttons (same behavior as other inner pages) -->
-    <nav class="navbar innerpage" role="navigation">
+    <!--
+      WRAPPER: settings-navbar
+      Purpose: Inner page navbar with Home + Settings. Color: #c28f65.
+    -->
+    <nav class="navbar innerpage" role="navigation" aria-label="Settings navigation">
       <div class="nav-left">
         <a href="index.html" class="nav-btn">Home</a>
       </div>
@@ -34,6 +37,47 @@
     </nav>
 
     <!--
+      WRAPPER: settings-content
+      Purpose: Space for you to input settings, app info, and editable fields.
+    -->
+    <main class="settings-content">
+      <section class="settings-form">
+        <!-- Simple placeholders you can replace with real form fields later -->
+        <div class="settings-block">
+          <label><!-- App name or version --></label>
+          <input type="text" placeholder="Add value here" />
+        </div>
+
+        <div class="settings-block">
+          <label><!-- App description --></label>
+          <textarea placeholder="Add description here"></textarea>
+        </div>
+
+        <div class="settings-block">
+          <p><!-- additional settings placeholder --></p>
+        </div>
+      </section>
+
+      <!--
+        WRAPPER: copyright
+        Purpose: Copyright text at bottom using Nunito (substitute for 'Nonito' you requested).
+                 Color: #434343. Font-size: 11px. Italicized.
+      -->
+      <footer class="settings-footer">
+        <p class="copyright">© <span class="copyright-name">taskforcetech</span></p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+        console.warn('SW registration failed:', err);
+      });
+    }
+  </script>
+</body>
+</html>
       WRAPPER: settings-content
       Purpose: Space for you to input settings & app metadata. Everything here is editable by you.
                At the bottom is the copyright text in the specified font, color, and size.
