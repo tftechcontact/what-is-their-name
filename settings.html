@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>What's their name? — Settings</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#b67d43" />
+</head>
+<body>
+  <!--
+    WRAPPER: settings-root
+    Purpose: Entire settings page. This page is completely separate from homepage/pages as requested.
+  -->
+  <div id="settings-root">
+    <!-- Banner -->
+    <header class="app-banner" role="banner">
+      <h1 class="app-title">What's their name?</h1>
+      <p class="app-tagline"><!-- tagline: add text here --></p>
+      <hr class="banner-divider" />
+    </header>
+
+    <!-- Navbar: Settings page also has Home + Settings buttons (same behavior as other inner pages) -->
+    <nav class="navbar innerpage" role="navigation">
+      <div class="nav-left">
+        <a href="index.html" class="nav-btn">Home</a>
+      </div>
+      <div class="nav-right">
+        <a href="settings.html" class="nav-btn">Settings</a>
+      </div>
+    </nav>
+
+    <!--
+      WRAPPER: settings-content
+      Purpose: Space for you to input settings & app metadata. Everything here is editable by you.
+               At the bottom is the copyright text in the specified font, color, and size.
+    -->
+    <main class="settings-content">
+      <section class="settings-form">
+        <!--
+          Placeholders: add form fields, textareas etc. below for future content.
+          These are left blank for you to fill later per your request.
+        -->
+        <div class="settings-block">
+          <label><!-- Setting name --></label>
+          <input type="text" placeholder="Add setting value" />
+        </div>
+
+        <div class="settings-block">
+          <label><!-- Another setting --></label>
+          <textarea placeholder="Add longer description or app info"></textarea>
+        </div>
+
+        <!-- Additional placeholders -->
+        <div class="settings-block">
+          <p><!-- Add additional settings or notes here --></p>
+        </div>
+      </section>
+
+      <!-- Bottom copyright area (special style per your instruction) -->
+      <footer class="settings-footer">
+        <!--
+          The copyright text must be: copyright symbol before the word taskforcetech,
+          color #434343, Nonito normal font size 11, italicized.
+          NOTE: We'll import Nonito via Google Fonts below for this footer ONLY.
+        -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+        <p class="copyright">
+          © <span class="copyright-name">taskforcetech</span>
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+        console.warn('SW registration failed:', err);
+      });
+    }
+  </script>
+</body>
+</html>
