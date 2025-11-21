@@ -3,13 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <!--
-    NOTE: Change the title to match each page when you duplicate this file (e.g., "What's their name? — Baby List 1").
-  -->
   <title>What's their name? — [PAGE NAME]</title>
 
-  <!-- Merriweather font -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&family=Nunito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#b67d43" />
@@ -17,25 +14,23 @@
 <body>
   <!--
     WRAPPER: page-root
-    Purpose: Top-level wrapper for this specific name page. This file should be duplicated to create separate pages (baby1.html etc.)
-             Editing inside this page will only affect this page.
+    Purpose: Top-level wrapper for this specific name list page. Editing here affects only this page.
   -->
   <div id="page-root">
 
     <!--
-      WRAPPER: banner (same visual title bar as homepage)
-      Purpose: App title (centered) and tagline placeholder.
+      WRAPPER: banner (same as homepage)
+      Purpose: Centered app title and tagline placeholder.
     -->
     <header class="app-banner" role="banner">
       <h1 class="app-title">What's their name?</h1>
-      <p class="app-tagline"><!-- tagline: add text here --></p>
+      <p class="app-tagline"><!-- add tagline here --></p>
       <hr class="banner-divider" />
     </header>
 
     <!--
       WRAPPER: page-navbar
-      Purpose: On any page other than homepage, navbar contains two buttons: Home and Settings (per your instruction).
-               Color: #633D78 (see note in index).
+      Purpose: Inner page navbar with Home + Settings buttons (per requirement). Color: #c28f65.
     -->
     <nav class="navbar innerpage" role="navigation" aria-label="Page navigation">
       <div class="nav-left">
@@ -48,20 +43,114 @@
 
     <!--
       WRAPPER: page-content
-      Purpose: Contains the H2 heading (left aligned, underlined), then an alphabetical top-to-bottom bullet list.
-               The alphabet letters are capitalized and underlined. Bullet color is #595852 and left aligned.
+      Purpose: Contains left-aligned underlined H2, followed by an alphabetical top-to-bottom bullet list.
+               The letters are capitalized, underlined and each list uses bullet color #595852.
                After the list there is a <p></p> placeholder for additional text.
     -->
     <main class="page-content">
-      <!--
-        WRAPPER: page-heading
-        Purpose: H2 heading (left aligned, underlined). Change the text below for each duplicated page.
-      -->
       <section class="page-heading">
         <h2 class="page-h2 underlined left-aligned">[PAGE HEADING — LEFT ALIGNED]</h2>
       </section>
 
       <!--
+        WRAPPER: alpha-list-wrapper
+        Purpose: The ordered list will be populated with 40 items by the script below.
+                 Each list item shows a bullet (styled #595852), an underlined capital label (A..Z, AA.. etc.),
+                 and a <p></p> placeholder where you will add the actual name/text later.
+                 The script exposes addListItem() for safe expansion.
+      -->
+      <section class="alpha-list-wrapper">
+        <ol id="alpha-list" class="alpha-list" aria-label="Alphabetical names list">
+          <!-- JS will populate 40 items here on load -->
+        </ol>
+
+        <!-- Post-list paragraph placeholder -->
+        <p class="after-list-placeholder"><!-- add page notes here --></p>
+      </section>
+    </main>
+
+    <!-- Page footer placeholder -->
+    <footer class="app-footer">
+      <p><!-- page footer --></p>
+    </footer>
+  </div>
+
+  <!-- Script: populate 40 alphabetical items and expose addListItem() -->
+  <script>
+    (function(){
+      function generateLabels(count){
+        const labels = [];
+        const A = 'A'.charCodeAt(0);
+        let i = 0;
+        while (labels.length < count) {
+          let n = i;
+          let label = '';
+          do {
+            label = String.fromCharCode(A + (n % 26)) + label;
+            n = Math.floor(n / 26) - 1;
+          } while (n >= 0);
+          labels.push(label);
+          i++;
+        }
+        return labels;
+      }
+
+      const N = 40;
+      const labels = generateLabels(N);
+      const list = document.getElementById('alpha-list');
+
+      labels.forEach(function(lbl){
+        const li = document.createElement('li');
+        li.className = 'alpha-item';
+
+        const bullet = document.createElement('span');
+        bullet.className = 'alpha-bullet';
+        bullet.setAttribute('aria-hidden','true');
+        bullet.textContent = '•';
+
+        const letter = document.createElement('span');
+        letter.className = 'alpha-letter underlined';
+        letter.textContent = lbl;
+
+        const textHolder = document.createElement('p');
+        textHolder.className = 'alpha-text';
+        textHolder.innerHTML = '<!-- add name/description here -->';
+
+        li.appendChild(bullet);
+        li.appendChild(letter);
+        li.appendChild(textHolder);
+
+        list.appendChild(li);
+      });
+
+      // Safe expansion function: call window.addListItem() from console to append more items
+      window.addListItem = function(customLabel){
+        const currentCount = list.children.length;
+        const newLabel = customLabel || generateLabels(currentCount + 1)[currentCount];
+        const li = document.createElement('li');
+        li.className = 'alpha-item';
+        const bullet = document.createElement('span'); bullet.className = 'alpha-bullet'; bullet.textContent = '•';
+        const letter = document.createElement('span'); letter.className = 'alpha-letter underlined'; letter.textContent = newLabel;
+        const textHolder = document.createElement('p'); textHolder.className = 'alpha-text'; textHolder.innerHTML = '<!-- add name/description here -->';
+        li.appendChild(bullet);
+        li.appendChild(letter);
+        li.appendChild(textHolder);
+        list.appendChild(li);
+        return li;
+      };
+    })();
+  </script>
+
+  <!-- Service worker registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+        console.warn('SW registration failed:', err);
+      });
+    }
+  </script>
+</body>
+</html>
         WRAPPER: alpha-list-wrapper
         Purpose: The unordered list container for the alphabetical list. JS below will populate 40 items automatically.
                  Each item includes a letter (capitalized and underlined) and an editable <p></p> placeholder next to it.
