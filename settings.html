@@ -78,6 +78,50 @@
   </script>
 </body>
 </html>
+    </nav>
+
+    <!--
+      WRAPPER: settings-content
+      Purpose: Space for you to input settings, app info, and editable fields.
+    -->
+    <main class="settings-content">
+      <section class="settings-form">
+        <!-- Simple placeholders you can replace with real form fields later -->
+        <div class="settings-block">
+          <label><!-- App name or version --></label>
+          <input type="text" placeholder="Add value here" />
+        </div>
+
+        <div class="settings-block">
+          <label><!-- App description --></label>
+          <textarea placeholder="Add description here"></textarea>
+        </div>
+
+        <div class="settings-block">
+          <p><!-- additional settings placeholder --></p>
+        </div>
+      </section>
+
+      <!--
+        WRAPPER: copyright
+        Purpose: Copyright text at bottom using Nunito (substitute for 'Nonito' you requested).
+                 Color: #434343. Font-size: 11px. Italicized.
+      -->
+      <footer class="settings-footer">
+        <p class="copyright">© <span class="copyright-name">taskforcetech</span></p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+        console.warn('SW registration failed:', err);
+      });
+    }
+  </script>
+</body>
+</html>
       WRAPPER: settings-content
       Purpose: Space for you to input settings & app metadata. Everything here is editable by you.
                At the bottom is the copyright text in the specified font, color, and size.
