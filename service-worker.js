@@ -1,7 +1,6 @@
 /* 
   WRAPPER: service-worker
-  Purpose: Minimal service worker to make the site PWA-friendly and allow PWABuilder to pick it up.
-           This is a simple cache-first worker; expand as you like later.
+  Purpose: Minimal service worker (cache-first) to support PWA packaging. Expand as needed.
 */
 const CACHE_NAME = 'whats-their-name-v1';
 const ASSETS = [
@@ -9,8 +8,8 @@ const ASSETS = [
   '/index.html',
   '/style.css',
   '/settings.html',
-  '/name-page-template.html',
-  // add other babyX.html and petX.html once created
+  '/name-page-template.html'
+  // add babyX.html and petX.html here once created
 ];
 
 self.addEventListener('install', event => {
