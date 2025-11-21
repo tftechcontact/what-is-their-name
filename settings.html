@@ -51,6 +51,23 @@
 
 </body>
 </html>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="copyright-wrapper">
+        <p class="copyright-text">© taskforcetech</p>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+                console.warn('SW registration failed:', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
 
 <!-- ===================================================== -->
         <div class="settings-content-placeholder">
