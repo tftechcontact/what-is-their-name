@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- SETTINGS PAGE HEAD — same layout and CSS as all other pages -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Their Name? — Settings</title>
@@ -11,15 +10,15 @@
 <body>
 
     <!-- ========================================================= -->
-    <!-- SITE TITLE BANNER (same as all pages)                     -->
+    <!-- SITE TITLE BANNER                                         -->
     <!-- ========================================================= -->
     <div class="site-title-wrapper">
         <h1 class="site-title">What's Their Name?</h1>
-        <p class="site-tagline"></p> <!-- You add text later -->
+        <p class="site-tagline"></p> <!-- You add text later in GitHub -->
     </div>
 
     <!-- ========================================================= -->
-    <!-- NAVBAR (Home + Settings)                                 -->
+    <!-- NAVBAR                                                    -->
     <!-- ========================================================= -->
     <nav class="navbar">
         <a class="nav-btn" href="index.html">Home</a>
@@ -27,13 +26,43 @@
     </nav>
 
     <!-- ========================================================= -->
-    <!-- SETTINGS WRAPPER                                         -->
-    <!-- Contains the heading + the blank editable space *FOR YOU* -->
-    <!-- BUT not editable from browser / end user.                -->
+    <!-- SETTINGS PAGE MAIN WRAPPER                                -->
     <!-- ========================================================= -->
     <div class="settings-wrapper">
 
-        <!-- SETTINGS PAGE HEADER -->
+        <h2 class="settings-heading">Settings</h2>
+
+        <!-- ===================================================== -->
+        <!-- NON-EDITABLE BLANK AREA (You add text in GitHub only) -->
+        <!-- ===================================================== -->
+        <div class="settings-content-placeholder">
+            <!-- Add any text here via GitHub; users only see blank -->
+        </div>
+
+        <!-- Optional image placeholder -->
+        <div class="settings-image-placeholder">
+            <img src="" alt="">
+        </div>
+
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- FOOTER                                                    -->
+    <!-- ========================================================= -->
+    <footer class="copyright-wrapper">
+        <p class="copyright-text">© taskforcetech</p>
+    </footer>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+                console.warn('SW registration failed:', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
         <h2 class="settings-heading">Settings</h2>
 
         <!-- BLANK SPACE FOR YOU TO FILL IN LATER THROUGH GITHUB -->
