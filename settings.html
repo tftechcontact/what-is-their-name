@@ -1,39 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>What's their name? — Settings</title>
+    <!-- SETTINGS PAGE HEAD SECTION — Loads shared CSS & fonts -->
+    <!-- This head section must match other pages so styling stays consistent -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Their Name? — Settings</title>
 
-  <!-- Fonts: Merriweather + Nunito -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&family=Nunito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#b67d43" />
+    <!-- Link to shared stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!--
-    WRAPPER: settings-root
-    Purpose: Entire settings page; separate from homepage and other pages.
-  -->
-  <div id="settings-root">
-    <header class="app-banner" role="banner">
-      <h1 class="app-title">What's their name?</h1>
-      <p class="app-tagline"><!-- tagline placeholder --></p>
-      <hr class="banner-divider" />
-    </header>
 
-    <!--
-      WRAPPER: settings-navbar
-      Purpose: Inner page navbar with Home + Settings. Color: #c28f65.
-    -->
-    <nav class="navbar innerpage" role="navigation" aria-label="Settings navigation">
-      <div class="nav-left">
-        <a href="index.html" class="nav-btn">Home</a>
-      </div>
-      <div class="nav-right">
-        <a href="settings.html" class="nav-btn">Settings</a>
-      </div>
+<body>
+    <!-- ========================================================= -->
+    <!-- SITE TITLE WRAPPER — Banner at top of every page          -->
+    <!-- ========================================================= -->
+    <div class="site-title-wrapper">
+        <!-- Title (centered) -->
+        <h1 class="site-title">What's Their Name?</h1>
+
+        <!-- Tagline placeholder — you fill in later -->
+        <p class="site-tagline"></p>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- NAVBAR WRAPPER — Shows Home + Settings                    -->
+    <!-- ========================================================= -->
+    <nav class="navbar">
+        <!-- Button to return to homepage -->
+        <a class="nav-btn" href="index.html">Home</a>
+
+        <!-- Active Settings page button -->
+        <a class="nav-btn" href="settings.html">Settings</a>
+    </nav>
+
+    <!-- ========================================================= -->
+    <!-- SETTINGS PAGE MAIN WRAPPER                                -->
+    <!-- Purpose: Holds all settings content and keeps formatting   -->
+    <!-- consistent with the rest of the app                       -->
+    <!-- ========================================================= -->
+    <div class="settings-wrapper">
+
+        <!-- ----------------------------------------------------- -->
+        <!-- SETTINGS PAGE HEADER                                  -->
+        <!-- This is the section title. You may rename it anytime. -->
+        <!-- ----------------------------------------------------- -->
+        <h2 class="settings-heading">Settings</h2>
+
+        <!-- ----------------------------------------------------- -->
+        <!-- SETTINGS CONTENT PLACEHOLDER                           -->
+        <!-- THIS IS THE CRUCIAL PART:                              -->
+        <!-- This is where you will manually type whatever settings -->
+        <!-- text or information you want.                          -->
+        <!-- Must remain a normal paragraph placeholder.            -->
+        <!-- ----------------------------------------------------- -->
+        <p class="settings-content"></p>
+
+        <!-- ----------------------------------------------------- -->
+        <!-- PLACEHOLDER FOR SETTINGS PAGE IMAGE (IF YOU ADD ONE)  -->
+        <!-- ----------------------------------------------------- -->
+        <div class="settings-image-placeholder">
+            <!-- You will replace this <img> src with your own file later -->
+            <img src="" alt="" />
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- COPYRIGHT FOOTER — Bottom of Settings page only            -->
+    <!-- ========================================================= -->
+    <footer class="copyright-wrapper">
+        <p class="copyright-text">© taskforcetech</p>
+    </footer>
+
+</body>
+</html>
     </nav>
 
     <!--
