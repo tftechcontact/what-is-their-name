@@ -12,7 +12,7 @@
     <!-- SITE TITLE BANNER -->
     <div class="site-title-wrapper">
         <h1 class="site-title">What's Their Name?</h1>
-        <p class="site-tagline"></p> <!-- Placeholder for your tagline -->
+        <p class="site-tagline"></p> <!-- Optional tagline placeholder -->
     </div>
 
     <!-- NAVBAR -->
@@ -24,16 +24,30 @@
     <!-- SETTINGS PAGE WRAPPER -->
     <div class="settings-wrapper">
 
-        <!-- BLANK SPACE FOR FUTURE CONTENT (NON-EDITABLE) -->
+        <!-- BLANK SPACE FOR FUTURE CONTENT -->
         <div class="settings-content-placeholder">
-            <!-- You will add text here via GitHub later -->
+            <!-- Add content here later via GitHub; non-editable by users -->
         </div>
 
-        <!-- OPTIONAL IMAGE PLACEHOLDER -->
-        <div class="settings-image-placeholder">
-            <img src="" alt="">
-        </div>
+    </div>
 
+    <!-- FOOTER -->
+    <footer class="copyright-wrapper">
+        <p class="copyright-text">© taskforcetech</p>
+    </footer>
+
+    <!-- SERVICE WORKER REGISTRATION -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .catch(function(err){
+                console.warn('SW registration failed:', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
     </div>
 
     <!-- FOOTER -->
