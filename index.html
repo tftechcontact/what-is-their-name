@@ -1,48 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Page meta and PWA basics -->
+  <!-- Page meta + PWA manifest link -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>What's their name? — Home</title>
 
-  <!-- Fonts: Merriweather (extra-bold, semibold, normal) -->
-  <!-- This pulls Merriweather from Google Fonts so the app uses the requested font weights. -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Fonts: Merriweather for main UI, Nunito for settings footer substitute -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&family=Nunito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-  <!-- App stylesheet -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Manifest placeholder: PWABuilder will generate /manifest.json later; including link so PWA tools find it -->
+  <!-- Manifest (PWABuilder will generate or you can add manifest.json) -->
   <link rel="manifest" href="manifest.json" />
-
-  <!-- Minimal meta for theme -->
   <meta name="theme-color" content="#b67d43" />
 </head>
 <body>
   <!--
     WRAPPER: app-root
-    Purpose: Top-level wrapper for the entire homepage. If you edit this container, you only affect the homepage.
+    Purpose: Top-level homepage wrapper. Editing inside this won't affect other pages.
   -->
   <div id="app-root">
 
     <!--
       WRAPPER: app-banner
-      Purpose: Contains the app title and tagline area that appears on every page. This is centered, uses Merriweather extra-bold for the title,
-               and leaves space underneath for a short tagline (left blank for you to fill later).
+      Purpose: Displays centered app title and tagline placeholder (fill tagline later).
+      Styling: Merriweather extra-bold 36 for title, Merriweather semi-bold 18 for tagline.
     -->
     <header class="app-banner" role="banner">
       <h1 class="app-title">What's their name?</h1>
-      <!-- Tagline placeholder (Merriweather semi-bold, size 18). Fill this later. -->
-      <p class="app-tagline" id="home-tagline"><!-- tagline: add text here --></p>
+      <p class="app-tagline"><!-- add tagline here --></p>
       <hr class="banner-divider" />
     </header>
 
     <!--
       WRAPPER: homepage-navbar
-      Purpose: Navbar that sits under the title & border on the homepage. Per your instruction, homepage navbar has a single Settings button.
-               Color chosen: #633D78 (per your step 1 where you explicitly required this hex for the navbar).
-               Note: you also mentioned #c28f65 later; I prioritized the explicit earlier instruction (#633D78). If you'd prefer the other hex, change --navbar-bg in style.css.
+      Purpose: Navbar under the banner; homepage shows only Settings (per requirement).
+      Color: #c28f65 (per your most recent instruction).
     -->
     <nav class="navbar homepage" role="navigation" aria-label="Main navigation">
       <div class="nav-left"></div>
@@ -53,55 +48,51 @@
 
     <!--
       WRAPPER: homepage-content
-      Purpose: Contains the two main categories (Baby Names and Pet Names). Each category is a separate wrapper so editing one won't break the other.
+      Purpose: Contains the two categories (Baby Names and Pet Names).
+      Each category is its own wrapper so edits are isolated.
     -->
     <main class="homepage-content">
       <!--
         WRAPPER: category-baby
-        Purpose: A vertical list (top-to-bottom) of 12 star-shaped buttons for baby name categories.
-                 Each star is clickable (redirects to its own page). Text to the RIGHT of each star is a <p></p> placeholder for you to fill in.
-                 The star itself contains no text (per your request).
+        Purpose: Baby Names section with 12 star buttons (SVG) and <p></p> placeholders on their right.
+                 Star buttons are links to separate pages (e.g., baby1.html ... baby12.html).
+                 Star color: #EBDB2A. Star size constrained to 48px by CSS (reduced per your instruction).
       -->
       <section class="category" id="baby-category">
         <h2 class="category-title underlined">Baby Names</h2>
 
         <!--
           WRAPPER: baby-list
-          Purpose: Vertical stack of 12 items. Edit only inside an individual item (the .baby-item) if you want to change that item.
+          Purpose: Vertical list of 12 items. Edit individual .baby-item blocks as needed.
         -->
         <div class="list-vertical">
-          <!-- Repeat this block 12 times, changing the href to the page you create (baby1.html...baby12.html) -->
-          <!-- Each block: star link (no text inside) + right-side <p> placeholder (not clickable) -->
+          <!-- Item 1 -->
           <div class="list-item baby-item">
-            <a class="star-link" href="baby1.html" aria-label="Open baby name list 1" title="Open baby name list 1">
-              <!-- SVG star (no text inside) -->
-              <svg viewBox="0 0 100 100" class="star" aria-hidden="true" focusable="false">
-                <!-- Star polygon shape -->
-                <polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" />
-              </svg>
-            </a>
-            <p class="item-text"><!-- baby 1 description goes here --></p>
-          </div>
-
-          <div class="list-item baby-item">
-            <a class="star-link" href="baby2.html" aria-label="Open baby name list 2" title="Open baby name list 2">
+            <a class="star-link" href="baby1.html" aria-label="Open baby list 1" title="Open baby list 1">
               <svg viewBox="0 0 100 100" class="star" aria-hidden="true" focusable="false">
                 <polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" />
               </svg>
             </a>
-            <p class="item-text"><!-- baby 2 description goes here --></p>
+            <p class="item-text"><!-- baby 1 text placeholder --></p>
           </div>
 
+          <!-- Item 2 -->
           <div class="list-item baby-item">
-            <a class="star-link" href="baby3.html" aria-label="Open baby name list 3" title="Open baby name list 3">
-              <svg viewBox="0 0 100 100" class="star" aria-hidden="true" focusable="false">
-                <polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" />
-              </svg>
+            <a class="star-link" href="baby2.html" aria-label="Open baby list 2">
+              <svg viewBox="0 0 100 100" class="star" aria-hidden="true" focusable="false"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg>
             </a>
-            <p class="item-text"><!-- baby 3 description goes here --></p>
+            <p class="item-text"><!-- baby 2 text placeholder --></p>
           </div>
 
-          <!-- 9 more baby items... -->
+          <!-- Item 3 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby3.html" aria-label="Open baby list 3">
+              <svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg>
+            </a>
+            <p class="item-text"><!-- baby 3 text placeholder --></p>
+          </div>
+
+          <!-- Items 4-12 (duplicate pattern) -->
           <div class="list-item baby-item"><a class="star-link" href="baby4.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 4 --></p></div>
           <div class="list-item baby-item"><a class="star-link" href="baby5.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 5 --></p></div>
           <div class="list-item baby-item"><a class="star-link" href="baby6.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 6 --></p></div>
@@ -116,32 +107,24 @@
 
       <!--
         WRAPPER: category-pet
-        Purpose: Pet names category: two star-shaped buttons (per your requirement) with <p></p> placeholders to the right.
+        Purpose: Pet Names section with 2 star buttons plus <p></p> placeholders.
       -->
       <section class="category" id="pet-category">
         <h2 class="category-title underlined">Pet Names</h2>
 
-        <!--
-          WRAPPER: pet-list
-          Purpose: Vertical stack of 2 items for pet categories.
-        -->
         <div class="list-vertical">
           <div class="list-item pet-item">
-            <a class="star-link" href="pet1.html" aria-label="Open pet name list 1" title="Open pet name list 1">
-              <svg viewBox="0 0 100 100" class="star" aria-hidden="true" focusable="false">
-                <polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" />
-              </svg>
+            <a class="star-link" href="pet1.html" aria-label="Open pet list 1">
+              <svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg>
             </a>
-            <p class="item-text"><!-- pet 1 description goes here --></p>
+            <p class="item-text"><!-- pet 1 text placeholder --></p>
           </div>
 
           <div class="list-item pet-item">
-            <a class="star-link" href="pet2.html" aria-label="Open pet name list 2" title="Open pet name list 2">
-              <svg viewBox="0 0 100 100" class="star" aria-hidden="true" focusable="false">
-                <polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" />
-              </svg>
+            <a class="star-link" href="pet2.html" aria-label="Open pet list 2">
+              <svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg>
             </a>
-            <p class="item-text"><!-- pet 2 description goes here --></p>
+            <p class="item-text"><!-- pet 2 text placeholder --></p>
           </div>
         </div>
       </section>
@@ -149,17 +132,15 @@
 
     <!--
       WRAPPER: footer
-      Purpose: small footer area (kept minimal on homepage). You can add more later.
+      Purpose: Minimal homepage footer placeholder.
     -->
     <footer class="app-footer">
-      <!-- placeholder -->
-      <p><!-- footer content --></p>
+      <p><!-- homepage footer --></p>
     </footer>
   </div>
 
-  <!-- Service worker registration (for PWA). The file service-worker.js is included below in repository -->
+  <!-- Register service worker -->
   <script>
-    // Register service worker if available
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js').catch(function(err){
         console.warn('SW registration failed:', err);
@@ -168,3 +149,5 @@
   </script>
 </body>
 </html>
+
+
