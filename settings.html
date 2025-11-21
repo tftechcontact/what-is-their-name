@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- SETTINGS PAGE HEAD SECTION — Loads shared CSS & fonts -->
-    <!-- This head section must match other pages so styling stays consistent -->
+    <!-- SETTINGS PAGE HEAD — same layout and CSS as all other pages -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Their Name? — Settings</title>
-
-    <!-- Link to shared stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <!-- ========================================================= -->
-    <!-- SITE TITLE WRAPPER — Banner at top of every page          -->
+    <!-- SITE TITLE BANNER (same as all pages)                     -->
     <!-- ========================================================= -->
     <div class="site-title-wrapper">
-        <!-- Title (centered) -->
         <h1 class="site-title">What's Their Name?</h1>
-
-        <!-- Tagline placeholder — you fill in later -->
-        <p class="site-tagline"></p>
+        <p class="site-tagline"></p> <!-- You add text later -->
     </div>
 
     <!-- ========================================================= -->
-    <!-- NAVBAR WRAPPER — Shows Home + Settings                    -->
+    <!-- NAVBAR (Home + Settings)                                 -->
     <!-- ========================================================= -->
     <nav class="navbar">
-        <!-- Button to return to homepage -->
         <a class="nav-btn" href="index.html">Home</a>
-
-        <!-- Active Settings page button -->
         <a class="nav-btn" href="settings.html">Settings</a>
     </nav>
 
+    <!-- ========================================================= -->
+    <!-- SETTINGS WRAPPER                                         -->
+    <!-- Contains the heading + the blank editable space *FOR YOU* -->
+    <!-- BUT not editable from browser / end user.                -->
+    <!-- ========================================================= -->
+    <div class="settings-wrapper">
+
+        <!-- SETTINGS PAGE HEADER -->
+        <h2 class="settings-heading">Settings</h2>
+
+        <!-- BLANK SPACE FOR YOU TO FILL IN LATER THROUGH GITHUB -->
+        <!-- IMPORTANT: This must NOT be contenteditable          -->
+        <!-- Users will see this as blank unless you add text.    -->
+        <div class="settings-content-placeholder">
+            <!-- You add your settings text here in GitHub later -->
+        </div>
+
+        <!-- OPTIONAL IMAGE PLACEHOLDER (blank to user) -->
+        <div class="settings-image-placeholder">
+            <img src="" alt="">
+        </div>
+
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- FOOTER — copyright (single version only)                 -->
+    <!-- ========================================================= -->
+    <footer class="copyright-wrapper">
+        <p class="copyright-text">© taskforcetech</p>
+    </footer>
+
+</body>
+</html>
     <!-- ========================================================= -->
     <!-- SETTINGS PAGE MAIN WRAPPER                                -->
     <!-- Purpose: Holds all settings content and keeps formatting   -->
