@@ -1,39 +1,247 @@
-/* Global styles and variables */
 /* 
   WRAPPER: style-root
-  Purpose: All shared CSS lives here. Editing shared colors/fonts should be safe; pages are independent HTML files so small CSS tweaks won't "break" structure.
+  Purpose: Global styles for the app. Modify variables below to change colors/fonts globally.
 */
+
+/* Color & typography variables (use your specified hex values) */
 :root{
-  --bg: #b67d43;           /* requested UI background */
-  --banner-bg: #c49331;    /* title banner color */
-  --navbar-bg: #633D78;    /* chosen navbar color per step 1 (see comments in HTML) */
-  --navbar-override: #c28f65; /* alternate value that you referenced later; not used by default */
-  --star-fill: #EBDB2A;    /* star buttons color */
-  --bul-color: #595852;    /* bullet color for lists */
-  --text-primary: #000000; /* main text color (you used #00000 — interpreted as black) */
-  --footer-copy: #434343;  /* copyright color on settings page */
-  --line-height: 1.6;
+  --bg: #b67d43;            /* UI background */
+  --banner-bg: #c49331;     /* title banner */
+  --navbar-bg: #c28f65;     /* navbar (using your latest requested value) */
+  --star-fill: #EBDB2A;     /* star button color */
+  --bul-color: #595852;     /* bullets color */
+  --text-primary: #000000;  /* main text (you specified #00000; interpreted as black #000000) */
+  --footer-copy: #434343;   /* footer copyright */
+  --line-height: 1.6;       /* global line-height */
   --title-font: 'Merriweather', serif;
+  --footer-font: 'Nunito', sans-serif; /* substitute for "Nonito" */
 }
 
-/* Basic page scaffolding */
-html,body{
-  height:100%;
-  margin:0;
+/* Page base */
+html, body {
+  height: 100%;
+  margin: 0;
   font-family: var(--title-font);
   background: var(--bg);
   color: var(--text-primary);
   line-height: var(--line-height);
+  -webkit-font-smoothing:antialiased;
 }
 
 /* Banner */
-.app-banner{
+.app-banner {
   background: var(--banner-bg);
-  text-align:center;
-  padding:18px 16px 10px 16px;
+  text-align: center;
+  padding: 18px 16px 10px 16px;
 }
-.app-title{
-  font-weight:800; /* extra-bold */
+.app-title {
+  font-weight: 800; /* extra-bold */
+  font-size: 36px;
+  margin: 0;
+  font-family: var(--title-font);
+}
+.app-tagline {
+  font-weight: 600; /* semi-bold */
+  font-size: 18px;
+  margin: 8px 0 0 0;
+}
+
+/* Divider under banner */
+.banner-divider {
+  margin-top: 12px;
+  border: 0;
+  height: 2px;
+  background: rgba(0,0,0,0.08);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--navbar-bg);
+  color: #fff;
+}
+.navbar .nav-btn {
+  display: inline-block;
+  background: none;
+  border: 2px solid rgba(255,255,255,0.15);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Layout containers */
+.homepage-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: flex-start;
+}
+
+/* Category wrapper */
+.category {
+  flex: 0 1 360px;
+  padding: 12px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  min-width: 300px;
+}
+.category-title {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  margin: 8px 0 16px 0;
+  text-decoration: underline;
+}
+
+/* Vertical list */
+.list-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Single list item: star + right-hand text */
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 
+  STAR button styles
+  - Reduced fixed size to prevent overscaling (48px).
+  - max-width:100% to ensure responsive behavior.
+*/
+.star-link {
+  display: inline-block;
+  width: 48px;        /* reduced size per your request */
+  height: 48px;
+  flex: 0 0 48px;
+  text-decoration: none;
+}
+.star {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: var(--star-fill);
+  stroke: rgba(0,0,0,0.12);
+  stroke-width: 1;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Right-hand descriptive text (not clickable) */
+.item-text {
+  margin: 0;
+  font-size: 20px;               /* Merriweather normal 20 */
+  font-family: var(--title-font);
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+/* Page content */
+.page-content {
+  padding: 20px;
+}
+
+/* H2 left aligned & underlined styles */
+.page-h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px; /* Merriweather normal 24 */
+  margin: 0 0 18px 0;
+  text-decoration: underline;
+  text-align: left;
+}
+
+/* Alphabetical list styling */
+/* Using custom bullet color (#595852) and left-aligned layout */
+.alpha-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.alpha-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+}
+.alpha-bullet {
+  color: var(--bul-color);
+  width: 16px;
+  line-height: 1;
+  font-size: 20px;
+  flex: 0 0 16px;
+  margin-top: 4px;
+}
+.alpha-letter {
+  font-size: 24px;
+  font-style: italic;
+  min-width: 40px;
+  text-decoration: underline;
+}
+.alpha-text {
+  margin: 0;
+  font-size: 20px;
+  font-family: var(--title-font);
+  font-weight: 400;
+}
+
+/* After list placeholder paragraph */
+.after-list-placeholder {
+  margin-top: 18px;
+}
+
+/* Settings page styles */
+.settings-content {
+  padding: 20px;
+}
+.settings-block {
+  margin-bottom: 14px;
+}
+.settings-block input, .settings-block textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-size: 16px;
+}
+
+/* Footer copyright styles */
+.settings-footer {
+  margin-top: 28px;
+  text-align: left;
+}
+.settings-footer .copyright {
+  font-family: var(--footer-font);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--footer-copy);
+}
+
+/* Misc footer */
+.app-footer {
+  padding: 12px 16px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+  .homepage-content { gap: 16px; padding: 12px; }
+  .category { min-width: 100%; }
+  .star-link { width: 40px; height: 40px; flex: 0 0 40px; } /* smaller on tiny screens */
+  .app-title { font-size: 30px; }
+}
   font-size:36px;
   margin:0;
   font-family: var(--title-font);
