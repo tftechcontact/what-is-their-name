@@ -62,30 +62,35 @@ body {
 }
 
 /* Navbar */
-.navbar {
-    background-color: #764756; /* Encases the nav bar with your chosen hex color */
-    padding: 10px 20px;        /* Adjust vertical/horizontal padding here */
-    display: flex;              /* Flexbox for alignment */
-    justify-content: flex-end;  /* Align buttons to the right */
-    gap: 15px;                  /* Space between buttons */
+/* Nav bar container */
+nav.navbar {
+    background-color: #764756;   /* Nav bar background color */
+    padding: 10px 20px;          /* Adjustable padding */
+    display: flex;               /* Flexbox for layout */
+    justify-content: flex-end;   /* Push buttons to the right */
+    gap: 10px;                   /* Space between buttons */
     box-shadow: 0 2px 6px rgba(200, 200, 200, 0.4); /* Light grey shadow */
 }
 
-.navbar .nav-btn {
-    color: #ffffff;             /* White text */
+/* Nav buttons */
+nav.navbar a.nav-btn {
+    color: #ffffff;              /* Button text color */
     text-decoration: none;
-    font-family: 'Merriweather', serif; /* Matches your site font */
-    font-size: 18px;            /* Font size */
-    padding: 8px 15px;          /* Button padding */
-    border-radius: 5px;         /* Rounded corners */
-    background-color: #633D78;  /* Button background color */
-    transition: background 0.3s, transform 0.2s; /* Smooth hover transitions */
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #633D78;   /* Button background */
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;       /* Make buttons sit next to each other */
 }
 
-.navbar .nav-btn:hover {
-    background-color: #8a4d7a;  /* Hover background color */
-    transform: translateY(-2px); /* Slight lift effect for more pizzazz */
+/* Hover effect */
+nav.navbar a.nav-btn:hover {
+    background-color: #8a4d7a;
+    transform: translateY(-2px); /* Slight lift */
 }
+
 
 
 /* Layout containers */
