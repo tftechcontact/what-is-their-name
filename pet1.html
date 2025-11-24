@@ -55,41 +55,176 @@
 
       <!-- alpha-list-wrapper. purpose: bullet (styled #595852). underlined capital label.
         script exposes addListItem() for safe expansion. -->
-        
+        <!--
       <section class="alpha-list-wrapper">
         <ol id="alpha-list" class="alpha-list" aria-label="Alphabetical names list">
-          Milo
+          <ul class="alpha-list">
+        </ol> -->
 
-Luna
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">A</span>
+    <span class="alpha-text">Atlas</span>
+  </li>
 
-Jasper
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">B</span>
+    <span class="alpha-text">Baxter <br> Bruno</span>
+  </li>
 
-Daisy
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">C</span>
+    <span class="alpha-text">Coco</span>
+  </li>
 
-Bruno
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">D</span>
+    <span class="alpha-text">Daisy</span>
+  </li>
 
-Nova
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">E</span>
+    <span class="alpha-text">
+        
+    </span>
+  </li>
 
-Scout
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">F</span>
+    <span class="alpha-text">Finn</span>
+  </li>
 
-Willow
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">G</span>
+    <span class="alpha-text"></span>
+  </li>
 
-Atlas
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">H</span>
+    <span class="alpha-text"></span>
+  </li>
 
-Coco
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">I</span>
+    <span class="alpha-text">Ivy</span>
+  </li>
 
-Finn
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">J</span>
+    <span class="alpha-text">Jasper</span>
+  </li>
 
-Maple
-Rex
-Nala
-Ziggy
-Olive
-Baxter
-Ivy
-Thor
-Pepper
-        </ol>
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">K</span>
+    <span class="alpha-text"></span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">L</span>
+    <span class="alpha-text">Luna</span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">M</span>
+    <span class="alpha-text">Maple <br> Milo</span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">N</span>
+    <span class="alpha-text">Nala <br> Nova</span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">O</span>
+    <span class="alpha-text">Olive</span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">P</span>
+    <span class="alpha-text">Pepper</span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">Q</span>
+    <span class="alpha-text"></span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">R</span>
+    <span class="alpha-text">Rex</span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">S</span>
+    <span class="alpha-text">Scout</span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">T</span>
+    <span class="alpha-text">Thor</span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">U</span>
+    <span class="alpha-text"></span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">V</span>
+    <span class="alpha-text"></span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">W</span>
+    <span class="alpha-text">Willow</span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">X</span>
+    <span class="alpha-text"></span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">Y</span>
+    <span class="alpha-text"></span>
+  </li>
+
+  <li class="alpha-item">
+    <span class="alpha-bullet">•</span>
+    <span class="alpha-letter">Z</span>
+    <span class="alpha-text">Ziggy</span>
+  </li>
+
+</ul>
+
+            
+            
+    
+        
 
         <!-- Post-list paragraph placeholder -->
         <p class="after-list-placeholder"><!-- add page notes here --></p>
@@ -102,80 +237,7 @@ Pepper
     </footer>
   </div>
 
-  <!-- Script: populate 40 alphabetical items and expose addListItem() -->
-  <script>
-    (function(){
-      function generateLabels(count){
-        const labels = [];
-        const A = 'A'.charCodeAt(0);
-        let i = 0;
-        while (labels.length < count) {
-          let n = i;
-          let label = '';
-          do {
-            label = String.fromCharCode(A + (n % 26)) + label;
-            n = Math.floor(n / 26) - 1;
-          } while (n >= 0);
-          labels.push(label);
-          i++;
-        }
-        return labels;
-      }
-
-      const N = 26;
-      const labels = generateLabels(N);
-      const list = document.getElementById('alpha-list');
-
-      labels.forEach(function(lbl){
-        const li = document.createElement('li');
-        li.className = 'alpha-item';
-
-        const bullet = document.createElement('span');
-        bullet.className = 'alpha-bullet';
-        bullet.setAttribute('aria-hidden','true');
-        bullet.textContent = '•';
-
-        const letter = document.createElement('span');
-        letter.className = 'alpha-letter underlined';
-        letter.textContent = lbl;
-
-        const textHolder = document.createElement('p');
-        textHolder.className = 'alpha-text';
-        textHolder.innerHTML = '<!-- add name/description here -->';
-
-        li.appendChild(bullet);
-        li.appendChild(letter);
-        li.appendChild(textHolder);
-
-        list.appendChild(li);
-      });
-
-      // Safe expansion function: call window.addListItem() from console to append more items
-      window.addListItem = function(customLabel){
-        const currentCount = list.children.length;
-        const newLabel = customLabel || generateLabels(currentCount + 1)[currentCount];
-        const li = document.createElement('li');
-        li.className = 'alpha-item';
-        const bullet = document.createElement('span'); bullet.className = 'alpha-bullet'; bullet.textContent = '•';
-        const letter = document.createElement('span'); letter.className = 'alpha-letter underlined'; letter.textContent = newLabel;
-        const textHolder = document.createElement('p'); textHolder.className = 'alpha-text'; textHolder.innerHTML = '<!-- add name/description here -->';
-        li.appendChild(bullet);
-        li.appendChild(letter);
-        li.appendChild(textHolder);
-        list.appendChild(li);
-        return li;
-      };
-    })();
-  </script>
-
-  <!-- Service worker registration -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').catch(function(err){
-        console.warn('SW registration failed:', err);
-      });
-    }
-  </script>
+ 
 
        <!-- WRAPPER: alpha-list-wrapper
         Purpose: The unordered list container for the alphabetical list. JS below will populate 40 items automatically.
