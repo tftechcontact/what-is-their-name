@@ -1,64 +1,37 @@
 /* ============================================================
-   GLOBAL RESET
-   Keeps spacing consistent across all browsers.
+   BANNER
    ============================================================ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ============================================================
-   BODY STYLING
-   Global background + default fonts + readability line-height
-   ============================================================ */
-body {
-  background-color: #b67d43;
-  font-family: "Merriweather", serif;
-  line-height: 1.6;
-  color: #000;
-}
 
 /* ============================================================
    BANNER
    ============================================================ */
 .app-banner {
-  background-color: #c49331;
-  text-align: center;
-  padding: 20px 10px;
+  background-color: #c49331;   /* Banner color */
+  text-align: center;          /* Center title and tagline */
+  padding: 20px 10px;          /* Top/bottom + left/right padding */
 }
 
 .app-title {
-  font-size: 36px;
-  font-weight: 800;
+  font-size: 36px;             /* Large heading */
+  font-weight: 800;            /* Extra bold */
+  margin: 0;                   /* Remove default margin */
+  font-family: 'Merriweather', serif;
 }
 
 .app-tagline {
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 4px;
+  font-size: 18px;             /* Smaller than title */
+  font-weight: 600;            /* Semi-bold */
+  margin: 4px 0 0 0;           /* Small space under title */
+  font-family: 'Merriweather', serif;
 }
 
 .banner-divider {
-.app-title {
-  font-weight: 800; /* extra-bold */
-  font-size: 36px;
-  margin: 0;
-  font-family: var(--title-font);
-}
-.app-tagline {
-  font-weight: 600; /* semi-bold */
-  font-size: 18px;
-  margin: 8px 0 0 0;
-}
-
-
-/* Divider under banner */
-.banner-divider {
-  margin-top: 12px;
+  margin-top: 12px;            /* Space above line */
   border: 0;
-  height: 2px;
-  background: rgba(0,0,0,0.08);
+  height: 2px;                 /* Line thickness */
+  background: rgba(0, 0, 0, 0.08); /* Light subtle divider line */
+}
+
 }
 
 /* Navbar */
