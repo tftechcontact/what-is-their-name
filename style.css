@@ -62,23 +62,30 @@ body {
 
 /* Navbar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 16px;
-  background: var(--navbar-bg);
-  color: #fff;
+    background-color: #764756; /* Encases the nav bar with your chosen hex color */
+    padding: 10px 20px;        /* Adjust vertical/horizontal padding here */
+    display: flex;              /* Flexbox for alignment */
+    justify-content: flex-end;  /* Align buttons to the right */
+    gap: 15px;                  /* Space between buttons */
+    box-shadow: 0 2px 6px rgba(200, 200, 200, 0.4); /* Light grey shadow */
 }
+
 .navbar .nav-btn {
-  display: inline-block;
-  background: none;
-  border: 2px solid rgba(255,255,255,0.15);
-  padding: 8px 12px;
-  border-radius: 8px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
+    color: #ffffff;             /* White text */
+    text-decoration: none;
+    font-family: 'Merriweather', serif; /* Matches your site font */
+    font-size: 18px;            /* Font size */
+    padding: 8px 15px;          /* Button padding */
+    border-radius: 5px;         /* Rounded corners */
+    background-color: #633D78;  /* Button background color */
+    transition: background 0.3s, transform 0.2s; /* Smooth hover transitions */
 }
+
+.navbar .nav-btn:hover {
+    background-color: #8a4d7a;  /* Hover background color */
+    transform: translateY(-2px); /* Slight lift effect for more pizzazz */
+}
+
 
 /* Layout containers */
 .homepage-content {
