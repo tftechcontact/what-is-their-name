@@ -11,14 +11,13 @@
 
 <body>
 
-    <!-- ========================================================= -->
-    <!-- SITE TITLE BANNER                                         -->
-    <!-- Purpose: Same header on every page                        -->
-    <!-- ========================================================= -->
-    <div class="site-title-wrapper">
-        <h1 class="site-title">What's Their Name?</h1>
-        <p class="site-tagline"></p> <!-- You insert tagline later -->
-    </div>
+     
+    <header class="app-banner" role="banner">
+      <h1 class="app-title">What's their name?</h1>
+      <!-- Tagline placeholder (fill later in GitHub) -->
+      <p class="app-tagline"><!-- add tagline here --></p>
+      <hr class="banner-divider" />
+    </header>
 
     <!-- ========================================================= -->
     <!-- NAVBAR — appears on all pages except home                 -->
@@ -35,6 +34,164 @@
     <div class="list-page-wrapper">
 
         <!-- PAGE HEADING (YOU EDIT THIS PER PAGE) -->
+        <h2 class="category-heading">
+            <!-- Example: Baby Girl Names -->
+        </h2>
+
+       
+
+
+
+    <!--
+      WRAPPER: page-content
+      Purpose: Contains left-aligned underlined H2, followed by an alphabetical top-to-bottom bullet list.
+               The letters are capitalized, underlined and each list uses bullet color #595852.
+               After the list there is a <p></p> placeholder for additional text.
+    -->
+    <main class="page-content">
+      <section class="page-heading">
+        <h2 class="page-h2 underlined left-aligned">[PAGE HEADING — LEFT ALIGNED]</h2>
+      </section>
+
+      <!-- alpha-list-wrapper. purpose: bullet (styled #595852). underlined capital label.
+        script exposes addListItem() for safe expansion. -->
+        
+      <section class="alpha-list-wrapper">
+        <ol id="alpha-list" class="alpha-list" aria-label="Alphabetical names list">
+          <!-- JS will populate 40 items here on load -->
+        </ol>
+
+        <!-- Post-list paragraph placeholder -->
+        <p class="after-list-placeholder"><!-- add page notes here --></p>
+      </section>
+    </main>
+
+    <!-- Page footer placeholder -->
+    <footer class="app-footer">
+      <p><!-- page footer --></p>
+    </footer>
+  </div>
+
+  <!-- Script: populate 40 alphabetical items and expose addListItem() -->
+  <script>
+    (function(){
+      function generateLabels(count){
+        const labels = [];
+        const A = 'A'.charCodeAt(0);
+        let i = 0;
+        while (labels.length < count) {
+          let n = i;
+          let label = '';
+          do {
+            label = String.fromCharCode(A + (n % 26)) + label;
+            n = Math.floor(n / 26) - 1;
+          } while (n >= 0);
+          labels.push(label);
+          i++;
+        }
+        return labels;
+      }
+
+      const N = 26;
+      const labels = generateLabels(N);
+      const list = document.getElementById('alpha-list');
+
+      labels.forEach(function(lbl){
+        const li = document.createElement('li');
+        li.className = 'alpha-item';
+
+        const bullet = document.createElement('span');
+        bullet.className = 'alpha-bullet';
+        bullet.setAttribute('aria-hidden','true');
+        bullet.textContent = '•';
+
+        const letter = document.createElement('span');
+        letter.className = 'alpha-letter underlined';
+        letter.textContent = lbl;
+
+        const textHolder = document.createElement('p');
+        textHolder.className = 'alpha-text';
+        textHolder.innerHTML = '<!-- add name/description here -->';
+
+        li.appendChild(bullet);
+        li.appendChild(letter);
+        li.appendChild(textHolder);
+
+        list.appendChild(li);
+      });
+
+      // Safe expansion function: call window.addListItem() from console to append more items
+      window.addListItem = function(customLabel){
+        const currentCount = list.children.length;
+        const newLabel = customLabel || generateLabels(currentCount + 1)[currentCount];
+        const li = document.createElement('li');
+        li.className = 'alpha-item';
+        const bullet = document.createElement('span'); bullet.className = 'alpha-bullet'; bullet.textContent = '•';
+        const letter = document.createElement('span'); letter.className = 'alpha-letter underlined'; letter.textContent = newLabel;
+        const textHolder = document.createElement('p'); textHolder.className = 'alpha-text'; textHolder.innerHTML = '<!-- add name/description here -->';
+        li.appendChild(bullet);
+        li.appendChild(letter);
+        li.appendChild(textHolder);
+        list.appendChild(li);
+        return li;
+      };
+    })();
+  </script>
+
+  <!-- Service worker registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+        console.warn('SW registration failed:', err);
+      });
+    }
+  </script>
+
+       <!-- WRAPPER: alpha-list-wrapper
+        Purpose: The unordered list container for the alphabetical list. JS below will populate 40 items automatically.
+                 Each item includes a letter (capitalized and underlined) and an editable <p></p> placeholder next to it.
+                 You can add more items later by editing the HTML or calling addListItem() from the console — it's safe.
+      -->
+      <section class="alpha-list-wrapper">
+        <ol id="alpha-list" class="alpha-list" aria-label="Alphabetical names list">
+          <!-- Items inserted by script for flexibility and to ensure numbering/letters are correct and easy to extend -->
+        </ol>
+
+        <!-- After the bullets, this <p> is left blank for you to add text later as requested -->
+        <p class="after-list-placeholder"><!-- Add any page-specific notes or descriptions here --></p>
+      </section>
+    </main>
+
+    <!--
+      WRAPPER: page-footer
+      Purpose: Minimal footer area. Add anything if needed.
+    -->
+    <footer class="app-footer">
+      <p><!-- footer content --></p>
+    </footer>
+  </div>
+
+  <!--
+    SCRIPT: populate alphabetical list
+    Purpose: Creates 40 list items labeled A..Z, AA..AN (total 40), each with:
+             - an underlined capital letter on the left
+             - a bullet marker colored #595852 (as requested)
+             - a <p></p> placeholder to the right so you can input the name/description later
+             The script also exposes a function addListItem() to append more items later without breaking layout.
+  -->
+  
+
+  <!-- Service worker registration (same as homepage) 
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function(err){
+        console.warn('SW registration failed:', err);
+      });
+    }
+  </script>
+    -->
+</body>
+</html>        <!-- PAGE HEADING (YOU EDIT THIS PER PAGE) -->
         <h2 class="category-heading">
             <!-- Example: Baby Girl Names -->
         </h2>
