@@ -1,39 +1,45 @@
-/* 
-  WRAPPER: style-root
-  Purpose: Global styles for the app. Modify variables below to change colors/fonts globally.
-*/
-
-/* Color & typography variables (use your specified hex values) */
-:root{
-  --bg: #b67d43;            /* UI background */
-  --banner-bg: #c49331;     /* title banner */
-  --navbar-bg: #c28f65;     /* navbar (using your latest requested value) */
-  --star-fill: #EBDB2A;     /* star button color */
-  --bul-color: #595852;     /* bullets color */
-  --text-primary: #000000;  /* main text (you specified #00000; interpreted as black #000000) */
-  --footer-copy: #434343;   /* footer copyright */
-  --line-height: 1.6;       /* global line-height */
-  --title-font: 'Merriweather', serif;
-  --footer-font: 'Nunito', sans-serif; /* substitute for "Nonito" */
-}
-
-/* Page base */
-html, body {
-  height: 100%;
+/* ============================================================
+   GLOBAL RESET
+   Keeps spacing consistent across all browsers.
+   ============================================================ */
+* {
   margin: 0;
-  font-family: var(--title-font);
-  background: var(--bg);
-  color: var(--text-primary);
-  line-height: var(--line-height);
-  -webkit-font-smoothing:antialiased;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Banner */
-.app-banner {
-  background: var(--banner-bg);
-  text-align: center;
-  padding: 18px 16px 10px 16px;
+/* ============================================================
+   BODY STYLING
+   Global background + default fonts + readability line-height
+   ============================================================ */
+body {
+  background-color: #b67d43;
+  font-family: "Merriweather", serif;
+  line-height: 1.6;
+  color: #000;
 }
+
+/* ============================================================
+   BANNER
+   ============================================================ */
+.app-banner {
+  background-color: #c49331;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.app-title {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.app-tagline {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.banner-divider {
 .app-title {
   font-weight: 800; /* extra-bold */
   font-size: 36px;
