@@ -1,43 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Page meta + PWA manifest link -->
+  <!-- PAGE META: charset, viewport, title -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>What's their name? — Home</title>
 
-  <!-- Fonts: Merriweather for main UI, Nunito for settings footer substitute -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&family=Nunito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Fonts: Merriweather (400/600/800) + Nunito for footer if needed later -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;800&family=Nunito:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Manifest (PWABuilder will generate or you can add manifest.json) -->
-  <link rel="manifest" href="manifest.json" />
+  <!-- Theme color for browsers -->
   <meta name="theme-color" content="#b67d43" />
 </head>
+
 <body>
   <!--
     WRAPPER: app-root
-    Purpose: Top-level homepage wrapper. Editing inside this won't affect other pages.
+    Purpose: top-level container for the homepage only. Editing inside this wrapper affects the homepage and not other pages.
   -->
   <div id="app-root">
 
     <!--
-      WRAPPER: app-banner
-      Purpose: Displays centered app title and tagline placeholder (fill tagline later).
-      Styling: Merriweather extra-bold 36 for title, Merriweather semi-bold 18 for tagline.
+      WRAPPER: banner
+      Purpose: displays the centered app title and tagline placeholder.
+               Title must be Merriweather extra-bold 36px; tagline Merriweather semi-bold 18px.
+               Banner background color is #c49331.
     -->
     <header class="app-banner" role="banner">
       <h1 class="app-title">What's their name?</h1>
+      <!-- Tagline placeholder (fill later in GitHub) -->
       <p class="app-tagline"><!-- add tagline here --></p>
       <hr class="banner-divider" />
     </header>
 
     <!--
       WRAPPER: homepage-navbar
-      Purpose: Navbar under the banner; homepage shows only Settings (per requirement).
-      Color: #c28f65 (per your most recent instruction).
+      Purpose: single navbar under the banner. On the homepage it contains only the Settings link.
+               Navbar background color is #c28f65.
     -->
     <nav class="navbar homepage" role="navigation" aria-label="Main navigation">
       <div class="nav-left"></div>
@@ -48,25 +50,26 @@
 
     <!--
       WRAPPER: homepage-content
-      Purpose: Contains the two categories (Baby Names and Pet Names).
-      Each category is its own wrapper so edits are isolated.
+      Purpose: main content area for the homepage: two category panels (Baby Names and Pet Names).
+               Each category is its own wrapper to isolate edits.
     -->
-    <main class="homepage-content">
+    <main class="homepage-content" role="main">
+
       <!--
         WRAPPER: category-baby
-        Purpose: Baby Names section with 12 star buttons (SVG) and <p></p> placeholders on their right.
-                 Star buttons are links to separate pages (e.g., baby1.html ... baby12.html).
-                 Star color: #EBDB2A. Star size constrained to 48px by CSS (reduced per your instruction).
+        Purpose: Baby Names panel with a vertical list of 12 star buttons.
+                 Each star is an <a> link to a dedicated page (baby1.html ... baby12.html).
+                 The star contains no text; the descriptive <p> to the right is NOT clickable.
       -->
       <section class="category" id="baby-category">
         <h2 class="category-title underlined">Baby Names</h2>
 
         <!--
           WRAPPER: baby-list
-          Purpose: Vertical list of 12 items. Edit individual .baby-item blocks as needed.
+          Purpose: stacked list of 12 items. Edit an individual .baby-item block to change one entry without affecting others.
         -->
         <div class="list-vertical">
-          <!-- Item 1 -->
+          <!-- item 1 -->
           <div class="list-item baby-item">
             <a class="star-link" href="baby1.html" aria-label="Open baby list 1" title="Open baby list 1">
               <svg viewBox="0 0 100 100" class="star" aria-hidden="true" focusable="false">
@@ -76,78 +79,107 @@
             <p class="item-text"><!-- baby 1 text placeholder --></p>
           </div>
 
-          <!-- Item 2 -->
+          <!-- item 2 -->
           <div class="list-item baby-item">
-            <a class="star-link" href="baby2.html" aria-label="Open baby list 2">
-              <svg viewBox="0 0 100 100" class="star" aria-hidden="true" focusable="false"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg>
-            </a>
+            <a class="star-link" href="baby2.html" aria-label="Open baby list 2"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
             <p class="item-text"><!-- baby 2 text placeholder --></p>
           </div>
 
-          <!-- Item 3 -->
+          <!-- item 3 -->
           <div class="list-item baby-item">
-            <a class="star-link" href="baby3.html" aria-label="Open baby list 3">
-              <svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg>
-            </a>
+            <a class="star-link" href="baby3.html" aria-label="Open baby list 3"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
             <p class="item-text"><!-- baby 3 text placeholder --></p>
           </div>
 
-          <!-- Items 4-12 (duplicate pattern) -->
-          <div class="list-item baby-item"><a class="star-link" href="baby4.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 4 --></p></div>
-          <div class="list-item baby-item"><a class="star-link" href="baby5.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 5 --></p></div>
-          <div class="list-item baby-item"><a class="star-link" href="baby6.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 6 --></p></div>
-          <div class="list-item baby-item"><a class="star-link" href="baby7.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 7 --></p></div>
-          <div class="list-item baby-item"><a class="star-link" href="baby8.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 8 --></p></div>
-          <div class="list-item baby-item"><a class="star-link" href="baby9.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 9 --></p></div>
-          <div class="list-item baby-item"><a class="star-link" href="baby10.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 10 --></p></div>
-          <div class="list-item baby-item"><a class="star-link" href="baby11.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 11 --></p></div>
-          <div class="list-item baby-item"><a class="star-link" href="baby12.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg></a><p class="item-text"><!-- baby 12 --></p></div>
+          <!-- item 4 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby4.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
+            <p class="item-text"><!-- baby 4 text placeholder --></p>
+          </div>
+
+          <!-- item 5 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby5.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
+            <p class="item-text"><!-- baby 5 text placeholder --></p>
+          </div>
+
+          <!-- item 6 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby6.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
+            <p class="item-text"><!-- baby 6 text placeholder --></p>
+          </div>
+
+          <!-- item 7 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby7.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
+            <p class="item-text"><!-- baby 7 text placeholder --></p>
+          </div>
+
+          <!-- item 8 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby8.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
+            <p class="item-text"><!-- baby 8 text placeholder --></p>
+          </div>
+
+          <!-- item 9 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby9.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
+            <p class="item-text"><!-- baby 9 text placeholder --></p>
+          </div>
+
+          <!-- item 10 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby10.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
+            <p class="item-text"><!-- baby 10 text placeholder --></p>
+          </div>
+
+          <!-- item 11 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby11.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
+            <p class="item-text"><!-- baby 11 text placeholder --></p>
+          </div>
+
+          <!-- item 12 -->
+          <div class="list-item baby-item">
+            <a class="star-link" href="baby12.html"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
+            <p class="item-text"><!-- baby 12 text placeholder --></p>
+          </div>
         </div>
       </section>
 
       <!--
         WRAPPER: category-pet
-        Purpose: Pet Names section with 2 star buttons plus <p></p> placeholders.
+        Purpose: Pet Names panel with 2 star buttons. Each links to pet1.html and pet2.html.
       -->
       <section class="category" id="pet-category">
         <h2 class="category-title underlined">Pet Names</h2>
 
         <div class="list-vertical">
           <div class="list-item pet-item">
-            <a class="star-link" href="pet1.html" aria-label="Open pet list 1">
-              <svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg>
-            </a>
+            <a class="star-link" href="pet1.html" aria-label="Open pet list 1"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
             <p class="item-text"><!-- pet 1 text placeholder --></p>
           </div>
 
           <div class="list-item pet-item">
-            <a class="star-link" href="pet2.html" aria-label="Open pet list 2">
-              <svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39" /></svg>
-            </a>
+            <a class="star-link" href="pet2.html" aria-label="Open pet list 2"><svg viewBox="0 0 100 100" class="star" aria-hidden="true"><polygon points="50,5 61,39 98,39 67,59 79,92 50,72 21,92 33,59 2,39 39,39"/></svg></a>
             <p class="item-text"><!-- pet 2 text placeholder --></p>
           </div>
         </div>
       </section>
+
     </main>
 
     <!--
-      WRAPPER: footer
-      Purpose: Minimal homepage footer placeholder.
+      WRAPPER: homepage-footer
+      Purpose: minimal footer for homepage only. Keep it simple; fill later if needed.
     -->
     <footer class="app-footer">
-      <p><!-- homepage footer --></p>
+      <p><!-- homepage footer placeholder --></p>
     </footer>
+
   </div>
 
-  <!-- Register service worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').catch(function(err){
-        console.warn('SW registration failed:', err);
-      });
-    }
-  </script>
+  <!-- Note: no service worker / manifest for plain website version -->
+
 </body>
 </html>
-
-
