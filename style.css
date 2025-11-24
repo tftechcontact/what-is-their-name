@@ -457,6 +457,12 @@ nav.navbar a.nav-btn:hover {
   text-align: center;
   opacity: 0.9;
 }
+/* FOOTER */
+.app-footer {
+  background-color: #764756;
+  width: 100%;
+  height: 40px;
+}
 
 /* Responsive tweaks */
 @media (max-width: 520px) {
