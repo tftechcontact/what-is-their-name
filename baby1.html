@@ -179,81 +179,9 @@
              - a <p></p> placeholder to the right so you can input the name/description later
              The script also exposes a function addListItem() to append more items later without breaking layout.
   -->
-  <script>
-    (function(){
-      // Function to generate the letter labels: A..Z, then AA, AB, ... until count reached
-      function generateLabels(count){
-        const labels = [];
-        const A = 'A'.charCodeAt(0);
-        let i = 0;
-        while (labels.length < count) {
-          // Convert i to a base-26 letter sequence (A..Z, AA..AZ, BA.. etc.)
-          let n = i;
-          let label = '';
-          do {
-            label = String.fromCharCode(A + (n % 26)) + label;
-            n = Math.floor(n / 26) - 1;
-          } while (n >= 0);
-          labels.push(label);
-          i++;
-        }
-        return labels;
-      }
+  
 
-      // Build n = 40 list items
-      const N = 26;
-      const labels = generateLabels(N);
-      const list = document.getElementById('alpha-list');
-
-      labels.forEach(function(lbl, idx){
-        const li = document.createElement('li');
-        li.className = 'alpha-item';
-
-        // Left-side bullet marker (color #595852)
-        const bullet = document.createElement('span');
-        bullet.className = 'alpha-bullet';
-        bullet.setAttribute('aria-hidden','true');
-        bullet.textContent = '•';
-
-        // Letter label (capitalized and underlined)
-        const letter = document.createElement('span');
-        letter.className = 'alpha-letter underlined';
-        letter.textContent = lbl;
-
-        // Name placeholder text (non-clickable, you will fill this later)
-        const textHolder = document.createElement('p');
-        textHolder.className = 'alpha-text';
-        textHolder.innerHTML = '<!-- add name/description here -->';
-
-        // Structure: [bullet] [letter] [text placeholder]
-        li.appendChild(bullet);
-        li.appendChild(letter);
-        li.appendChild(textHolder);
-
-        list.appendChild(li);
-      });
-
-      // Expose a function to add more list items without breaking anything
-      window.addListItem = function(customLabel) {
-        // customLabel optional; if omitted generate next label sequence
-        const currentCount = list.children.length;
-        const newLabel = customLabel || generateLabels(currentCount + 1)[currentCount];
-        const li = document.createElement('li');
-        li.className = 'alpha-item';
-        const bullet = document.createElement('span'); bullet.className = 'alpha-bullet'; bullet.textContent = '•';
-        const letter = document.createElement('span'); letter.className = 'alpha-letter underlined'; letter.textContent = newLabel;
-        const textHolder = document.createElement('p'); textHolder.className = 'alpha-text'; textHolder.innerHTML = '<!-- add name/description here -->';
-        li.appendChild(bullet);
-        li.appendChild(letter);
-        li.appendChild(textHolder);
-        list.appendChild(li);
-        return li;
-      };
-
-    })();
-  </script>
-
-  <!-- Service worker registration (same as homepage) -->
+  <!-- Service worker registration (same as homepage) 
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js').catch(function(err){
@@ -261,5 +189,6 @@
       });
     }
   </script>
+    -->
 </body>
 </html>
