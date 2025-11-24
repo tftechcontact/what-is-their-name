@@ -19,6 +19,39 @@ body {
   color: #000;
 }
 
+/* ============================================================
+   BANNER
+   ============================================================ */
+.app-banner {
+  background-color: #c49331;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.app-title {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.app-tagline {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.banner-divider {
+.app-title {
+  font-weight: 800; /* extra-bold */
+  font-size: 36px;
+  margin: 0;
+  font-family: var(--title-font);
+}
+.app-tagline {
+  font-weight: 600; /* semi-bold */
+  font-size: 18px;
+  margin: 8px 0 0 0;
+}
+
 
 /* Divider under banner */
 .banner-divider {
