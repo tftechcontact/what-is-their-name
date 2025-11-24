@@ -464,6 +464,39 @@ nav.navbar a.nav-btn:hover {
   height: 40px;
 }
 
+/* Alphabetical list layout */
+.alpha-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.alpha-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.alpha-bullet {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #5a2575; /* purple to match your theme */
+}
+
+.alpha-letter {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #5a2575; /* purple letter */
+  min-width: 20px; /* keeps alignment clean */
+}
+
+.alpha-text {
+  flex: 1;
+  color: #333;
+  line-height: 1.4;
+}
+
+
 /* Responsive tweaks */
 @media (max-width: 520px) {
   .homepage-content { gap: 16px; padding: 12px; }
